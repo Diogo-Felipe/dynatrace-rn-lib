@@ -1,0 +1,23 @@
+{
+	"name": "dynatrace-lib",
+	"version": "1.0.0",
+	"description": "Dynatrace lib for natura",
+	"main": "main.js",
+	"scripts": {
+		"test": "test",
+		"instrumentDynatrace": "node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js"
+	},
+	"keywords": [
+		"natura",
+		"react-native",
+		"dynatrace"
+	],
+	"author": "Natura&co",
+	"license": "ISC",
+	"dependencies": {
+		"@dynatrace/react-native-plugin": "^2.217.1"
+	},
+	"devDependencies": {
+		"typescript": "^4.3.5"
+	}
+}
