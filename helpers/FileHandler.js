@@ -3,26 +3,28 @@ const path = require("path");
 
 class FileHandler {
 
-  constructor(configsObject){
+  constructor(configsObject) {
 
-    if(configsObject.applicationId && configsObject.beaconUrl){
+    if (configsObject.applicationId && configsObject.beaconUrl) {
       this.configsObject = configsObject;
-    }else{
+    } else {
       throw new Error("Please provide the applicationId and beaconUrl");
     }
 
   }
 
-  writeFile(filePath, fileTemplateBuffer){
+  writeFile(filePath, fileTemplateBuffer) {
 
     const resolvedFilePath = path.resolve(__dirname, filePath);
 
-    if(fs.existsSync(filePath)){
+    if (fs.existsSync(filePath)) {
       console.log(`File ${path} already exists`);
       return false;
     }
 
-    fs.writeFile(resolvedFilePath, fileTemplateBuffer);
+    fs.writeFile(resolvedFilePath, fileTemplateBuffer, (err) => {
+      console.log(err)
+    });
   }
 
 
