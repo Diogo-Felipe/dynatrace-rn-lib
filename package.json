@@ -2,7 +2,7 @@
 	"name": "dynatrace-lib",
 	"version": "1.0.0",
 	"description": "Dynatrace lib for natura",
-	"main": "main.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "test",
 		"instrumentDynatrace": "node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js"
