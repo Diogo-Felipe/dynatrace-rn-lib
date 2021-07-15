@@ -1,5 +1,5 @@
 import { Dynatrace, ManualStartupConfiguration } from '@dynatrace/react-native-plugin';
-const configsObject = require("../../../dynatrace-destination.config");
+const configsObject = require("../../../dynatrace-destination.config.js");
 
 export class DynatraceService {
 
