@@ -4,6 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var reactNativePlugin = require('@dynatrace/react-native-plugin');
 
+require("../../../dynatrace-destination.config");
+
 class DynatraceService {
 
   constructor(componentName) {
@@ -21,7 +23,7 @@ class DynatraceService {
   }
 
   sendApiFetch(apiName) {
-    let dynatraceAction = reactNativePlugin.Dynatrace.enterAction(`API ${apiName} from ${this.componentName} fetched` );
+    let dynatraceAction = reactNativePlugin.Dynatrace.enterAction(`API ${apiName} from ${this.componentName} fetched`);
     dynatraceAction.leaveAction();
   }
 }

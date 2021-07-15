@@ -1,4 +1,5 @@
-import { Dynatrace } from '@dynatrace/react-native-plugin';
+import { Dynatrace, ManualStartupConfiguration } from '@dynatrace/react-native-plugin';
+const configsObject = require("../../../dynatrace-destination.config");
 
 export class DynatraceService {
 
@@ -17,7 +18,18 @@ export class DynatraceService {
   }
 
   sendApiFetch(apiName) {
-    let dynatraceAction = Dynatrace.enterAction(`API ${apiName} from ${this.componentName} fetched` );
+    let dynatraceAction = Dynatrace.enterAction(`API ${apiName} from ${this.componentName} fetched`);
     dynatraceAction.leaveAction();
+  }
+}
+
+export class DynatraceInitializer {
+  
+  constructor() {
+    Dynatrace.start(new ManualStartupConfiguration(configsObject.beaconUrl, configsObject.applicationId));
+  }
+
+  setUser(user) {
+    Dynatrace.identifyUser(user);
   }
 }
