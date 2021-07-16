@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var reactNativePlugin = require('@dynatrace/react-native-plugin');
 
-require("../../../dynatrace-destination.config.js");
+require("../../dynatrace-destination.config.js");
 
 class DynatraceService {
 
