@@ -26,11 +26,9 @@ class DynatraceService {
   }
 }
 
-const configsObject = require("../../dynatrace-destination.config.js");
-
 class DynatraceInitializer {
   
-  constructor() {
+  constructor(configsObject) {
     Dynatrace.start(new reactNativePlugin.ManualStartupConfiguration(configsObject.beaconUrl, configsObject.applicationId));
   }
 
