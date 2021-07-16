@@ -4,8 +4,6 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var reactNativePlugin = require('@dynatrace/react-native-plugin');
 
-require("../../dynatrace-destination.config.js");
-
 class DynatraceService {
 
   constructor(componentName) {
@@ -28,4 +26,18 @@ class DynatraceService {
   }
 }
 
+const configsObject = require("../../dynatrace-destination.config.js");
+
+class DynatraceInitializer {
+  
+  constructor() {
+    Dynatrace.start(new reactNativePlugin.ManualStartupConfiguration(configsObject.beaconUrl, configsObject.applicationId));
+  }
+
+  setUser(user) {
+    Dynatrace.identifyUser(user);
+  }
+}
+
+exports.DynatraceInitializer = DynatraceInitializer;
 exports.DynatraceService = DynatraceService;
