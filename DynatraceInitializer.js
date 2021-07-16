@@ -1,4 +1,4 @@
-import { ManualStartupConfiguration } from '@dynatrace/react-native-plugin';
+import { Dynatrace, ManualStartupConfiguration } from '@dynatrace/react-native-plugin';
 
 export class DynatraceInitializer {
   

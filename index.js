@@ -29,11 +29,11 @@ class DynatraceService {
 class DynatraceInitializer {
   
   constructor(configsObject) {
-    Dynatrace.start(new reactNativePlugin.ManualStartupConfiguration(configsObject.beaconUrl, configsObject.applicationId));
+    reactNativePlugin.Dynatrace.start(new reactNativePlugin.ManualStartupConfiguration(configsObject.beaconUrl, configsObject.applicationId));
   }
 
   setUser(user) {
-    Dynatrace.identifyUser(user);
+    reactNativePlugin.Dynatrace.identifyUser(user);
   }
 }
 
