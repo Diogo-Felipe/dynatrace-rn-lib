@@ -20,7 +20,7 @@ async function modifyPackageJson() {
     return;
   } else {
     packageJsonParsed.scripts.dynatraceConfigureDestination = configValue;
-    writeTextToFile(packageJsonPath, JSON.stringify(packageJsonParsed, null, "\t"));
+    fileHandler.writeTextToFile(packageJsonPath, JSON.stringify(packageJsonParsed, null, "\t"));
   }
 
 }
