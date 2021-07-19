@@ -6,10 +6,9 @@ const fileHandler = new FileHandler();
 
 modifyPackageJson();
 
-function modifyPackageJson() {
+async function modifyPackageJson() {
   const packageJsonPath = "../../../package.json"
-  let packageJson = fileHandler.readFile(packageJsonPath);
-  console.log(packageJson);
+  let packageJson = await fileHandler.readFile(packageJsonPath);
   let packageJsonParsed = JSON.parse(packageJson);
   let configValue = "node node_modules/dynatrace-rn-lib/scripts/config.js && node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js";
 
