@@ -21,7 +21,7 @@ function modifyPackageJson() {
     return;
   } else {
     packageJsonParsed.scripts.dynatraceConfigureDestination = configValue;
-    yield writeTextToFile(packageJsonPath, JSON.stringify(packageJsonParsed, null, "\t"));
+    writeTextToFile(packageJsonPath, JSON.stringify(packageJsonParsed, null, "\t"));
   }
 
 }
