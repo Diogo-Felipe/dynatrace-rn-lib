@@ -3,13 +3,20 @@ const path = require("path");
 
 class FileHandler {
 
-  constructor(configsObject) {
+  readFile(filePath) {
 
-    if (configsObject.applicationId && configsObject.beaconUrl) {
-      this.configsObject = configsObject;
-    } else {
-      throw new Error("Please provide the applicationId and beaconUrl");
-    }
+    const resolvedFilePath = path.resolve(__dirname, filePath);
+
+    return new Promise((resolve, reject) => {
+      fs.readFile(resolvedFilePath, "utf8", (err, data) => {
+        if (err) {
+          reject(err + "Could not read the file: " + path.resolve(resolvedFilePath));
+        } else {
+          console.log(data);
+          resolve(data);
+        }
+      });
+    });
 
   }
 
@@ -23,12 +30,28 @@ class FileHandler {
     }
 
     fs.writeFile(resolvedFilePath, fileTemplateBuffer, (err) => {
-      console.log(err)
+      if (err) {
+        console.log(`Error writing file ${path}`);
+        return false;
+      }
+      console.log(`File ${path} written`);
+      return true;
     });
   }
 
+  writeTextToFile(filePath, text) {
+    
+    const resolvedFilePath = path.resolve(__dirname, filePath);
 
-
+    return new Promise(function (resolve, reject) {
+      fs.writeFile(resolvedFilePath, text, (err) => {
+          if (err) {
+              reject(err + " Could not write to file: " + path.resolve(filePath));
+          }
+          resolve(filePath);
+      });
+  });
+  }
 }
 
 module.exports = FileHandler;
