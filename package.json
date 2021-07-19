@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "test",
+		"install": "node ./scripts/install.js",
 		"instrumentDynatrace": "node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js"
 	},
 	"keywords": [
