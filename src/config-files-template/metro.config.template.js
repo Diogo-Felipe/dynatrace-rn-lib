@@ -1,5 +1,4 @@
 module.exports = function generateMetroConfigFileBuffer() {
-
   return `/**
 * Metro configuration for React Native
 * https://github.com/facebook/react-native
@@ -19,5 +18,4 @@ module.exports = {
   },
   reporter: require('@dynatrace/react-native-plugin/lib/dynatrace-reporter'),
 };`;
-
-}
+};

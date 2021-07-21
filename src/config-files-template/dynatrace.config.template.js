@@ -1,10 +1,9 @@
 module.exports = function generateDynatraceConfigFileBuffer(configsObject) {
+  if (!configsObject) {
+    throw new Error("configsObject is required");
+  }
 
-    if(!configsObject) {
-        throw new Error('configsObject is required');
-    }
-
-    return `module.exports = {
+  return `module.exports = {
     react : {
         debug : true,
         
@@ -57,5 +56,4 @@ module.exports = function generateDynatraceConfigFileBuffer(configsObject) {
         \`
     }
 }`;
-
-}
+};

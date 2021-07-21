@@ -2,11 +2,14 @@
 	"name": "dynatrace-lib",
 	"version": "1.0.0",
 	"description": "Dynatrace lib for natura",
-	"main": "index.js",
+	"main": "lib/index.js",
 	"scripts": {
 		"test": "test",
 		"install": "node ./scripts/install.js",
-		"instrumentDynatrace": "node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js"
+		"instrumentDynatrace": "node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js",
+		"build": "tsc",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+		"lint": "tslint -p tsconfig.json"
 	},
 	"keywords": [
 		"natura",
@@ -19,6 +22,12 @@
 		"@dynatrace/react-native-plugin": "^2.217.1"
 	},
 	"devDependencies": {
+		"@types/jest": "^26.0.24",
+		"jest": "^27.0.6",
+		"prettier": "^2.3.2",
+		"ts-jest": "^27.0.3",
+		"tslint": "^6.1.3",
+		"tslint-config-prettier": "^1.18.0",
 		"typescript": "^4.3.5"
 	}
 }
