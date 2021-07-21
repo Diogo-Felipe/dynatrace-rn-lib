@@ -5,7 +5,7 @@
 	"main": "lib/index.js",
 	"scripts": {
 		"test": "test",
-		"install": "node ./scripts/install.js",
+		"install": "node ./lib/scripts/install.js",
 		"instrumentDynatrace": "node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js",
 		"build": "tsc",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
