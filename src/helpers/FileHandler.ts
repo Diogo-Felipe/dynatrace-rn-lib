@@ -55,7 +55,7 @@ export class FileHandler {
     const packageJson = await this.readFile(packageJsonPath);
     const packageJsonParsed = JSON.parse(packageJson);
     const configValue =
-      "node node_modules/dynatrace-rn-lib/lib/scripts/config.js && node node_modules/@dynatrace/react-native-plugin/lib/scripts/instrument.js";
+      "node node_modules/dynatrace-rn-lib/lib/scripts/config.js && node node_modules/@dynatrace/react-native-plugin/scripts/instrument.js";
 
     if (packageJsonParsed.scripts === undefined) {
       packageJsonParsed.scripts = {};
