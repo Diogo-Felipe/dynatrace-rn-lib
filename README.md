@@ -81,13 +81,45 @@ import { DynatraceService } from 'dynatrace-rn-lib';
   }
 
   handleClick(event: any) {
-    this.dynatraceService.sendClickEvent("click at button");
+    this.dynatraceService.sendClickEvent("button");
   }
 
   fetchAPI() {
     this.dynatraceService.sendApiFetch('my api name');
   }
 
+```
+
+### DynatraceService Methods
+
+#### **sendRenderComponent**
+
+This methods has the responsibility to send the render component event to the Dynatrace API.
+
+It has no parameter and will be sent to dynatrace according to the name given in the constructor.
+
+```
+Render component My component name
+```
+
+#### **sendClickEvent**
+
+This methods has the responsibility to send interaction events to the Dynatrace API.
+
+It receives a `string` as parameter and will be sent to dynatrace according to the name given in the constructor and the string.
+
+```
+Click on button from My component name
+```
+
+#### **sendApiFetch**
+
+This methods has the responsibility to send api fetch events to the Dynatrace API.
+
+It receives a `string` as parameter and will be sent to dynatrace according to the name given in the constructor and the string.
+
+```
+API my api name from My component name fetched
 ```
 
 ---
