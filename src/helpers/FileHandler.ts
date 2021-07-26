@@ -50,8 +50,7 @@ export class FileHandler {
     });
   }
 
-  async modifyPackageJson() {
-    const packageJsonPath = "../../../../package.json";
+  async modifyPackageJson(packageJsonPath: string) {
     const packageJson = await this.readFile(packageJsonPath);
     const packageJsonParsed = JSON.parse(packageJson);
     const configValue =
